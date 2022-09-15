@@ -1,0 +1,49 @@
+@startuml
+
+left to right direction
+
+Actor Employees
+
+rectangle "System" {
+  Employees --> (Mark job as complete)
+  Employees --> (Auto material control)
+  Employees --> (See assigned jobs)
+  Employees --> (See location in workshop)
+  Employees --> (Log in)
+  Employees --> (Log time)
+  Employees --> (See job materials )
+}
+
+Actor Admin
+
+rectangle "Admin system" { 
+  Admin --> (Add jobs - materials)
+  Admin --> (Add jobs - job type)
+  Admin --> (Add jobs - duration)
+  Admin --> (Add jobs - worker details)
+
+}
+
+Actor EllieGuest
+
+rectangle "System" {
+  EllieGuest --> (See overview and progress of work)
+
+
+}
+
+
+
+Actor Others
+
+rectangle "System" {
+  Others --> (Book holidays)
+  Others --> (Book sick leave)
+  Others --> (Add HR details)
+
+
+}
+
+
+
+@enduml

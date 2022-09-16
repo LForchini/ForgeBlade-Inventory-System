@@ -19,7 +19,8 @@ export enum JobState {
 
 @Table
 export default class Job extends Model {
-    duration!: any;
+    @Column
+    duration!: number;
 
     @Column
     state!: JobState;

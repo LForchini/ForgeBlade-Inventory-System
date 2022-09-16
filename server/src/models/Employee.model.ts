@@ -3,7 +3,6 @@ import {
     Column,
     Model,
     HasMany,
-    DataType,
     BelongsToMany,
     ForeignKey,
 } from "sequelize-typescript";
@@ -37,6 +36,9 @@ export default class Employee extends Model {
 
     @Column
     role!: Role;
+
+    @Column
+    sub!: string;
 
     @HasMany(() => Log)
     logs!: Log[];

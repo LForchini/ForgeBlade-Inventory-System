@@ -104,6 +104,6 @@ dist
 .tern-port
 
 # SQLITE Database in use here
-multiverse-store.sqlite
+db.sqlite
 
 .DS_Store

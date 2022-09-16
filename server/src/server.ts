@@ -6,7 +6,7 @@ import jwks from "jwks-rsa";
 
 import { router as JobRouter } from "./routes/Job.route";
 
-const PORT = process.env.PORT || 9090;
+const PORT = process.env.PORT ?? 9090;
 const jwtCheck = expressjwt({
     secret: jwks.expressJwtSecret({
         cache: true,
@@ -24,8 +24,9 @@ app.use(jwtCheck);
 app.use(express.json());
 
 app.use("/jobs", JobRouter);
+// app.use("/");
 
 app.listen(PORT, async () => {
     console.log(`starting server on port ${PORT}`);
-    await sequelize.sync({ force: true });
+    await sequelize.sync();
 });

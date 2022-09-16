@@ -1,10 +1,12 @@
+const image = "../mock/data-not-found.png";
+
 const john = {
     id: 1,
     name: "John Smith",
     dob: "1990-09-16",
     email: "johnsmith@email.com",
     role: "Worker",
-    image: "src\mock\data-not-found.png"
+    image: image
 };
 
 const sue = {
@@ -13,18 +15,16 @@ const sue = {
     dob: "1986-04-02",
     email: "johnsmith@email.com",
     role: "HR",
-    image: "src\mock\data-not-found.png"
+    image: image
 };
 
-const brad = {
+export const brad = {
     id: 3,
-    name: "Brad Pitty",
+    name: "Brad Pitty with a very long name",
     dob: "1963-12-18",
     email: "johnsmith@email.com",
     role: "Admin",
-    image: "src\mock\data-not-found.png"
+    image: image
 };
 
-export function DummyUserData() {
-    return [john, sue, brad];
-}
+export const DummyUserData = [john, sue, brad];

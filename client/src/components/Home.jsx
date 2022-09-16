@@ -1,16 +1,11 @@
-import { DummyUserData } from "../mock/DummyData";
-import image from "../mock/data-not-found.png";
+import { useEffect, useState } from "react";
 import Header from "./header/Header";
+import image from "../mock/data-not-found.png";
+import { DummyUserData } from "../mock/DummyData.js";
 
 function Home() {
-    const user = {
-        id: 1,
-        name: "John Smith",
-        dob: "1990-09-16",
-        email: "johnsmith@email.com",
-        role: "Worker",
-        image: image,
-    };
+    const user = DummyUserData[0];
+    user.image = image;
 
     return (
         <div className="home-page">

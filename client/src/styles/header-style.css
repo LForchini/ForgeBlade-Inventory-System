@@ -1,0 +1,35 @@
+.user-header {
+    height: 200px;
+    padding: 0 15px;
+}
+
+.user-data {
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.image-container {
+    border: 1px solid gray;
+    height: 150px;
+    width: 150px;
+    margin-right: 10px;
+}
+
+.user-img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.user-details {
+    line-height: 1.8;
+    margin-top: 30px;
+}
+
+.settings {
+    display: flex;
+    position: absolute;
+    right: 20px;
+}

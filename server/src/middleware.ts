@@ -32,11 +32,24 @@ export async function load_employee(
     let employee = await Employee.findOne({ where: { sub } });
 
     if (!employee) {
-        res.status(StatusCodes.BAD_REQUEST).send({
-            error: getReasonPhrase(StatusCodes.BAD_REQUEST),
-            debug: `Could not find employee with sub ${sub}`,
+        // Check if first time logging in
+
+        // This is a rather hacky approach to the issue that the sub isn't
+        // known until the first time the user logs in, but the user account
+        // can be created in advance.
+        employee = await Employee.findOne({
+            where: { email: req.auth?.email },
         });
-        return;
+        if (!employee) {
+            res.status(StatusCodes.BAD_REQUEST).send({
+                error: getReasonPhrase(StatusCodes.BAD_REQUEST),
+                debug: `Could not find employee with sub ${sub}`,
+            });
+            return;
+        }
+
+        employee.sub = sub;
+        await employee.save();
     }
 
     req.employee = employee;

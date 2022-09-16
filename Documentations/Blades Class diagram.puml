@@ -1,0 +1,68 @@
+@startuml
+
+title Classes - Class Diagram
+
+class Employee {
+	--Properties--
+	string name
+	date dob
+	string email
+	string role
+	--Methods--
+  void login()
+  void logTime()
+}
+
+class TimeLog {
+	--Properties--
+	date timeStart
+	date timeEnd
+}
+
+class Order {
+	--Properties--
+	string orderID
+	int quantity
+	date createdAt
+	date dueAt
+}
+
+class Job {
+	--Properties--
+	string jobType
+	string[] materials
+	string duration
+	Employee[] workers
+	string status
+	--Method--
+	
+}
+
+class Stock {
+	--Properties--
+	string materialName
+	string materialType
+	int stockQuantity
+}
+
+class StockRequest {
+	Stock material
+	int materialQuantity
+	--Method--
+	orderStock()
+}
+
+class Receipt {
+	--Properties--
+	int amount
+	date datePaid
+}
+
+Order "1"-right-"1" Job
+Order "1"-up-"1" Receipt: has a
+Job "1"--"1..*" StockRequest
+TimeLog "1"---"*" Job
+TimeLog "1"---"*" Employee
+Stock "1" -left- "*" StockRequest
+
+@enduml

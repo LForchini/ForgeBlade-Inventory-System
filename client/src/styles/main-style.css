@@ -1,0 +1,31 @@
+main {
+    margin: 0 15px;
+}
+
+.job-card {
+    background: gray;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.job-card h2 {
+    font-size: 20px;
+}
+
+.job-details {
+    list-style: none;
+}
+
+.job-details h2 {
+    width: 230px;
+}
+
+.job-status {
+    background: transparent;
+    border: none;
+    font-weight: bold;
+    position: fixed;
+    right: 20px;
+    width: fit-content;
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "./header/Header";
 import image from "../mock/data-not-found.png";
 import { DummyUserData } from "../mock/DummyData.js";
+import Jobs from "./job/Jobs";
 
 function Home() {
     const user = DummyUserData[0];
@@ -15,6 +16,9 @@ function Home() {
                 name={user.name}
                 role={user.role}
             />
+            <main>
+                <Jobs />
+            </main>
         </div>
     );
 }

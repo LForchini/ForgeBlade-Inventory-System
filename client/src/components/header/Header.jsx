@@ -9,7 +9,7 @@ function Header({ id, image, name, role }) {
                 </div>
                 <div>
                     <div className="settings">
-                        <p>Settings</p>
+                        <span>Settings</span>
                         <img src={SettingsIcon} alt="settings" />
                     </div>
                     <div className="user-details">

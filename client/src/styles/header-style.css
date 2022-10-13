@@ -1,6 +1,6 @@
 .user-header {
     height: 200px;
-    padding: 0 15px;
+    margin: 0 15px;
 }
 
 .user-data {
@@ -29,7 +29,11 @@
 }
 
 .settings {
-    display: flex;
     position: absolute;
     right: 20px;
+    cursor: pointer;
+}
+
+.settings span {
+    margin-right: 5px;
 }

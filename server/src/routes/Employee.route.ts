@@ -25,7 +25,7 @@ router
         if (!forename || !surname || !date_of_birth || !email || !role) {
             res.status(StatusCodes.BAD_REQUEST).send({
                 error: getReasonPhrase(StatusCodes.BAD_REQUEST),
-                debug: `Missing required fields: [forname|surname|date_of_birth|email|role]+`,
+                debug: `Missing required fields: [forename|surname|date_of_birth|email|role]+`,
             });
             return;
         }

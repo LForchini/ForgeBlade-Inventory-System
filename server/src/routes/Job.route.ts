@@ -55,13 +55,6 @@ router
             return;
         }
 
-        if (!job) {
-            res.status(StatusCodes.NOT_FOUND).send({
-                error: getReasonPhrase(StatusCodes.NOT_FOUND),
-                debug: `Could not find job with PK: ${req.params.id}`,
-            });
-            return;
-        }
         res.status(StatusCodes.OK).send(job);
     })
     .patch(guard.check("admin"), async (req: Request, res: Response) => {
